@@ -6,7 +6,7 @@ function [m1, m2, z2, z3, z4] = momente(daten)
   endif
 
   # number of elements
-  n = numel(daten);#rows(daten) * columns(daten);
+  n = numel(daten);
 
   # convert the input data to a single vector
   daten = reshape(daten, 1, n);
@@ -15,9 +15,9 @@ function [m1, m2, z2, z3, z4] = momente(daten)
 
   m2 = mean(daten.^2);
 
-  diff = (daten - m1);
+  z2 = var(daten);
 
-  z2 = mean(diff.^2);
+  diff = (daten - m1);
 
   z3 = mean(diff.^3);
 
